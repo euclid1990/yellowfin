@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Get Report{% endblock %}
+{% block content %}
+    <h1>Get Report From Yellowfin</h1>
+    <p>
+        <form action="{{ path_for('get') }}" method="POST">
+
+            <label for="email">Yellowfin Email: </label>
+            <input type="text" id="email" name="email" value="{{ email }}">
+            <br>
+
+            <label for="password">Yellowfin Password: </label>
+            <input type="password" id="password" name="password" value="{{ password }}">
+            <br>
+
+            <label for="domain">Yellowfin Domain: </label>
+            <input type="text" id="domain" name="domain" value="{{ domain }}">
+            <br>
+
+            <label for="report-uuid">Report UUID: </label>
+            <input type="text" id="reportId" name="reportId" value="{{ report_id }}">
+            <br>
+
+            <label for="report-uuid">Report Type: </label>
+            <select name="type">
+                <option value="{{ report_type.csv }}">CSV</option>
+                <option value="{{ report_type.pdf }}">PDF</option>
+            </select>
+            <br><br>
+
+            <input type="submit" value="Download">
+        </form>
+    </p>
+{% endblock %}

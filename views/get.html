@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}Show & Download Report{% endblock %}
+{% block content %}
+    <h1>Get Result</h1>
+    <div id="report">
+
+    </div>
+    <p>
+        <strong>⇨ <a href="{{ path_for('download', { 'filename': filename }) }}">Download {{ filename }}</a></strong>
+    </p>
+    <hr>
+    <p>
+        <a href="{{ path_for('home') }}">[Back to Home]</a>
+    </p>
+    <script type="text/javascript">
+        function createReportElement() {
+            document.getElementById('report').innerHTML = '<h2>Report Embeded</h2><div id=\"report-container-{{ report_id }}\" style=\"width: 500px; height: 500px; \"></div>\n';
+            yellowfin.reports.loadReport({"elementId":"report-container-{{ report_id }}","reportUUID":"{{ report_id }}","width":500,"height":465});
+        }
+
+        if (window.yellowfin) {
+            createReportElement();
+        } else {
+            document.write(unescape('%3Cscript src="/js/loadreport.js" type="text/javascript"%3E%3C/script%3E'));
+            setTimeout(createReportElement, 500) ;
+        }
+    </script>
+{% endblock %}

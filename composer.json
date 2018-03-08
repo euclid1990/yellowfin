@@ -1,0 +1,31 @@
+{
+    "name": "euclid1990/yellowfin",
+    "description": "Download report from yellowfin with CURL and Dom Parse",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nguyen Van Vuong",
+            "email": "euclid1990@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "3.0",
+        "vlucas/phpdotenv": "2.4.0",
+        "guzzlehttp/guzzle": "6.3",
+        "symfony/dom-crawler": "4.0",
+        "slim/twig-view": "2.3",
+        "hassankhan/config": "1.0",
+        "zeuxisoo/slim-whoops": "0.6.3",
+        "symfony/css-selector": "4.0.6",
+        "symfony/var-dumper": "4.0.6",
+        "facebook/webdriver": "^1.5"
+    },
+    "autoload": {
+        "files": [
+            "libs/helpers.php"
+        ],
+        "psr-4": {
+            "Lib\\": "libs/"
+        }
+    }
+}

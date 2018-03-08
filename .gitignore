@@ -1,0 +1,9 @@
+# environment
+.env
+
+# misc
+.DS_Store
+.log
+
+# vendor, packages
+/vendor
